@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Related Opportunities">
+        <lightning-input
+            type="text"
+            placeholder="Type in to filter opportunities"
+            onchange={handleFilterChange}>
+        </lightning-input>
+        <lightning-datatable
+            key-field="Id"
+            data={displayedOpportunities}
+            columns={columns}
+            hide-checkbox-column="true">
+        </lightning-datatable>
+        <div class="slds-m-top_medium">
+            <c-pagination-component
+                current-page={currentPage}
+                total-pages={totalPages}
+                onpagechange={handlePageChange}>
+            </c-pagination-component>
+        </div>
+    </lightning-card>
+</template>
